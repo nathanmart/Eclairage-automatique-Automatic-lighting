@@ -1,0 +1,93 @@
+# Eclairage-automatique-Automatic-lighting
+Eclairage automatique/Automatic lighting
+
+
+int brocheEmmeteur;
+int recepteurExt;
+int recepteurint;
+int lumiere;
+int nbPersonne;
+int compteur;
+int valExt;
+int valInt;
+int alimExt;
+int alimInt;
+ 
+
+void setup() {
+
+brocheEmmeteur= 2;
+recepteurExt= 4;
+recepteurInt=7;
+lumiere=13;
+nbPersonne=0;
+compteur=0;
+alimInt=9;
+alimExt=10;
+
+pinMode ( brocheEmmeteur,OUTPUT);
+pinMode ( recepteurExt,INPUT);
+pinMode ( recepteurInt,INPUT);
+pinMode( lumiere,OUTPUT);
+pinMode (alimExt,OUTPUT);
+pinMode (alimInt,OUTPUT);
+
+digitalWrite(alimExt, HIGH);
+digitalWrite(alimInt, HIGH);
+
+valExt = digitalRead(recepteurExt);  
+valInt = digitalRead(recepteurInt);    
+}
+
+void loop() {
+
+  
+switch (compteur) { 
+  
+    case 0:                                 //quand le compteur est à 0
+      if(digitalRead(valExt)==LOW) {             //Quand le recepteur exterieur est caché
+        compteur=2;
+      }
+
+      if(digitalRead(valInt)==LOW) {            //quand le recepteur intérieure est caché
+        compteur=12;
+
+      }
+        break;    
+
+     
+    case 2:
+      if(digitalRead(valInt)==LOW)   {
+        compteur= 3;
+      }
+  
+      break;
+
+
+    case 3:
+    if(digitalRead(valExt)==HIGH)   {
+      nbPersonne++;
+      compteur= 30;
+    }
+
+
+    case 12:
+      if(digitalRead(valExt)== LOW) {
+        compteur=13;
+        
+      }
+
+    case 13:
+     if(digitalRead(valExt)==HIGH) {
+      nbPersonne--;
+      compteur=30;
+     }
+
+
+    case 30:
+     if (nbPersonne>0) {
+      digitalWrite(lumiere,HIGH);
+      compteur= 0;
+     }
+}
+}
