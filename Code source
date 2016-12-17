@@ -20,7 +20,7 @@ void setup() {
 pinMode ( brocheEmmeteur,OUTPUT);
 pinMode ( recepteurExt,INPUT);
 pinMode ( recepteurInt,INPUT);
-pinMode( lumiere,OUTPUT);
+pinMode ( lumiere,OUTPUT);
 pinMode (alimExt,OUTPUT);
 pinMode (alimInt,OUTPUT);
 
