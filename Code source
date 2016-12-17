@@ -5,7 +5,7 @@
 int brocheEmmeteur=2;
 int recepteurExt=4;
 int recepteurint=7;
-int lumiere=13=0;
+int lumiere=13;
 int nbPersonne=0;
 int compteur=0;
 int valExt=0;
