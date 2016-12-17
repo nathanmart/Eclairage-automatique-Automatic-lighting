@@ -2,28 +2,20 @@
 //Eclairage automatique/Automatic lighting
 
 
-int brocheEmmeteur;
-int recepteurExt;
-int recepteurint;
-int lumiere;
-int nbPersonne;
-int compteur;
-int valExt;
-int valInt;
-int alimExt;
-int alimInt;
+int brocheEmmeteur=2;
+int recepteurExt=4;
+int recepteurint=7;
+int lumiere=13=0;
+int nbPersonne=0;
+int compteur=0;
+int valExt=0;
+int valInt=0;
+int alimExt=9;
+int alimInt=10;
  
 
 void setup() {
 
-brocheEmmeteur= 2;
-recepteurExt= 4;
-recepteurInt=7;
-lumiere=13;
-nbPersonne=0;
-compteur=0;
-alimInt=9;
-alimExt=10;
 
 pinMode ( brocheEmmeteur,OUTPUT);
 pinMode ( recepteurExt,INPUT);
